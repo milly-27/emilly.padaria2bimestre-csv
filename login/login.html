@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="usuario" placeholder="Usuário" required />
+    <input type="password" id="senha" placeholder="Senha" required />
+    <span class="toggle-senha" onclick="mostrarSenha('senha')">👁</span>
+    <input type="email" id="email" placeholder="Email" required />
+
+    <button onclick="logar()">Entrar</button>
+    <!-- Adicionei id para facilitar o JS -->
+    <button id="btnCadastro">Fazer cadastro</button>
+
+    <p id="mensagem"></p>
+    <!-- Link com id para JS -->
+    <p><a href="#" id="btnRecuperar">Esqueci a senha</a></p>
+  </div>
+
+  <script src="login.js"></script>
+  <script src="../admin/server.js"></script>
+
+</body>
+</html>
