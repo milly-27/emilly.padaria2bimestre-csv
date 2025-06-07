@@ -29,17 +29,13 @@ function cadastrar() {
 
   let dados = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  if (dados.some(u => u.usuario === usuario)) {
-    msg.textContent = "Usuário já existe. Escolha outro.";
-    return;
-  }
-
   if (dados.some(u => u.email === email)) {
     msg.textContent = "E-mail já cadastrado. Use outro.";
     return;
   }
 
-  dados.push({ usuario, email, senha });
+  // Adiciona o tipo como cliente
+  dados.push({ usuario, email, senha, tipo: "cliente" });
   localStorage.setItem("usuarios", JSON.stringify(dados));
 
   msg.style.color = "green";

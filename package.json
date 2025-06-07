@@ -1,7 +1,7 @@
 {
   "name": "novo-teste-2-bimestre",
   "version": "1.0.0",
-  "description": "",
+  "description": "....",
   "main": "index.js",
   "dependencies": {
     "accepts": "^2.0.0",
@@ -20,6 +20,7 @@
     "cookie-signature": "^1.2.2",
     "core-util-is": "^1.0.3",
     "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
     "debug": "^4.4.1",
     "depd": "^2.0.0",
     "dezalgo": "^1.0.4",
@@ -32,6 +33,7 @@
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
     "express": "^5.1.0",
+    "fast-csv": "^5.0.2",
     "finalhandler": "^2.1.0",
     "formidable": "^3.5.4",
     "forwarded": "^0.2.0",
@@ -48,6 +50,7 @@
     "ipaddr.js": "^1.9.1",
     "is-promise": "^4.0.0",
     "isarray": "^1.0.0",
+    "json-server": "^1.0.0-beta.3",
     "math-intrinsics": "^1.1.0",
     "media-typer": "^1.1.0",
     "merge-descriptors": "^2.0.0",

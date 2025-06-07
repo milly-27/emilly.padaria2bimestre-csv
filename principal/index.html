@@ -1,10 +1,10 @@
-<!DOCTYPE html> <!-- Define o tipo do documento como HTML5 -->
-<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade em dispositivos móveis -->
-  <title>Delícias Pink Delfins</title> <!-- Título da aba do navegador -->
-  <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo de estilos CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delícias Pink Delfins</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,65 +13,49 @@
     <a href="../login/login.html" class="login-button">Login</a>
   </header>
 
-
   <div id="painel-adm" style="display: none;">
     <h2>Painel Administrativo</h2>
     <button onclick="abrirAdicionarProduto()">Adicionar Produto</button>
     <button onclick="abrirModificarProduto()">Modificar Produto</button>
     <button onclick="abrirExcluirProduto()">Excluir Produto</button>
     <button onclick="abrirGerenciarCupons()">Gerenciar Cupons</button>
-    <!-- Você pode expandir com mais botões ou modais -->
   </div>
   
-
-  <!-- A tag <main> representa o conteúdo principal da página.
-       Deve conter o conteúdo central da página, que está diretamente relacionado com o propósito principal do site. -->
   <main class="container"> 
-
-    <!-- A tag <nav> representa uma seção de navegação da página.
-         É usada para agrupar links que levam a outras partes do site ou da aplicação. -->
-    <nav class="menu"> 
-      <button onclick="mostrarCategoria('doces')">Doces</button> <!-- Botão para mostrar categoria 'Doces' -->
-      <button onclick="mostrarCategoria('salgados')">Salgados</button> <!-- Botão para mostrar categoria 'Salgados' -->
-      <button onclick="mostrarCategoria('bebidas')">Bebidas</button> <!-- Botão para mostrar categoria 'Bebidas' -->
+    <nav class="menu">
+      <button onclick="mostrarCategoria('doces')">Doces</button>
+      <button onclick="mostrarCategoria('salgados')">Salgados</button>
+      <button onclick="mostrarCategoria('bebidas')">Bebidas</button>
     </nav>
-    
 
-    <!-- A tag <section> representa uma seção genérica de conteúdo.
-         É usada para agrupar conteúdo tematicamente relacionado — neste caso, os produtos. -->
-    <section class="produtos" id="produtos"> 
-      <!-- Produtos carregados via JS -->
+    <section class="produtos" id="produtos">
+      <div id="doces" class="categoria"></div>
+      <div id="salgados" class="categoria" style="display:none"></div>
+      <div id="bebidas" class="categoria" style="display:none"></div>
     </section>
 
-    <!-- A tag <aside> representa conteúdo complementar ao conteúdo principal.
-         Normalmente usada para barras laterais, widgets ou, neste caso, o carrinho de compras. -->
-    <aside class="carrinho" id="carrinho"> 
-      <h3>Carrinho</h3> <!-- Título da seção do carrinho -->
-      
-      <!-- A tag <table> representa uma tabela de dados estruturados. -->
+    <aside class="carrinho" id="carrinho">
+      <h3>Carrinho</h3>
       <table id="lista-carrinho">
-        <thead> <!-- Cabeçalho da tabela -->
-          <tr> <!-- Linha da tabela -->
-            <th>Produto</th> <!-- Cabeçalho da coluna: Produto -->
-            <th>Qtd</th>     <!-- Cabeçalho da coluna: Quantidade -->
-            <th>Preço</th>   <!-- Cabeçalho da coluna: Preço -->
-            <th>Subtotal</th> <!-- Cabeçalho da coluna: Subtotal -->
-            <th>Ações</th>   <!-- Cabeçalho da coluna: Ações -->
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Preço</th>
+            <th>Subtotal</th>
+            <th>Ações</th>
           </tr>
         </thead>
-        <tbody id="corpo-carrinho"> <!-- Corpo da tabela onde os itens serão inseridos dinamicamente via JavaScript -->
-          <!-- Itens serão inseridos aqui -->
-        </tbody>
+        <tbody id="corpo-carrinho"></tbody>
       </table>
-      
-      <p id="total">Total: R$ 0,00</p> <!-- Parágrafo exibindo o valor total do carrinho -->
-      <button id="btn-proximo" onclick="irParaCupom()">Próximo</button> <!-- Botão para avançar no processo de compra -->
+      <p id="total">Total: R$ 0,00</p>
+      <button id="btn-proximo" onclick="irParaCupom()">Próximo</button>
     </aside>
 
   </main>
 
-  <script src="script.js"></script> <!-- Importa o arquivo de JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
